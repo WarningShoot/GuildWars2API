@@ -4,16 +4,17 @@ let sumOrder;
 let sumInstant;
 
 //https://api.guildwars2.com/v2/commerce/prices/
-//https://api.guildwars2.com/v2/account/materials?access_token=api
+//https://api.guildwars2.com/v2/account/materials?access_token=apiKey
 //B8ACED5A-2BBF-F54C-AC3D-E830779EB7F6D6439EDF-416D-4A83-B0A9-4577EBA8ECD7 - Mój
 //08749A6F-F776-C543-B422-D4EBC7AB85EE1525C672-C237-4763-BABB-C957DB9631CE - Bartek
-
-let apiKey = "B8ACED5A-2BBF-F54C-AC3D-E830779EB7F6D6439EDF-416D-4A83-B0A9-4577EBA8ECD7"
 
 function btnClk()
 {
     bank = null;
     prices = [];
+
+    let str = $("#apiKey").val();
+    apiKey = str;
 
     $.ajax({
         type: 'GET',
@@ -26,7 +27,7 @@ function btnClk()
            getPrices(bank);
         },
         error: function() {
-           alert("Your error message goes here");
+           alert("Błędny API KEY");
         }
      });
 }
