@@ -8,7 +8,7 @@ let sumInstant;
 //B8ACED5A-2BBF-F54C-AC3D-E830779EB7F6D6439EDF-416D-4A83-B0A9-4577EBA8ECD7 - Mój
 //08749A6F-F776-C543-B422-D4EBC7AB85EE1525C672-C237-4763-BABB-C957DB9631CE - Bartek
 
-let apiKey = "08749A6F-F776-C543-B422-D4EBC7AB85EE1525C672-C237-4763-BABB-C957DB9631CE"
+let apiKey = "B8ACED5A-2BBF-F54C-AC3D-E830779EB7F6D6439EDF-416D-4A83-B0A9-4577EBA8ECD7"
 
 function btnClk()
 {
@@ -80,8 +80,8 @@ function getSum()
 
     for(let i = 0; i < prices.length; i++)
     {
-        sumOrder += prices[i].count * prices[i].sells;
-        sumInstant += prices[i].count * prices[i].buys;
+        sumOrder += Math.floor(0.85 * (prices[i].count * prices[i].sells));
+        sumInstant += Math.floor(0.85 * (prices[i].count * prices[i].buys));
     }
 
     console.log(sumOrder, sumInstant);
